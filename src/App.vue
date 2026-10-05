@@ -71,7 +71,7 @@ const prices = [
     <main>
       <section id="home" class="hero">
         <div class="hero-image">
-          <img src="/images/hero.jpg" alt="Seth Greenan artwork" />
+          <img src="/public/images/hero.jpg" alt="Seth Greenan artwork" />
         </div>
         <div class="hero-overlay"></div>
 
@@ -122,7 +122,7 @@ const prices = [
       <section id="about" class="about-section">
         <div class="about-image">
           <div class="portrait-frame">
-            <img src="/images/seth.jpg" alt="Seth Greenan" />
+            <img src="/public/images/seth.jpg" alt="Seth Greenan" />
             <span class="signature">SG</span>
           </div>
         </div>
