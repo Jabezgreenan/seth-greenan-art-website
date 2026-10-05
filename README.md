@@ -27,8 +27,33 @@ npm run preview
 - Contact
 - Instagram + email only
 
-## Customise
+## Add your images
 
-Edit `src/App.vue` to change the artwork titles, prices, email address and Instagram URL.
+All site images live in:
 
-The generated visual reference is stored at `src/assets/site-reference.png` and is used as the hero artwork/background.
+```text
+public/images/
+```
+
+Use these filenames:
+
+```text
+hero.jpg
+seth.jpg
+artwork-01.jpg
+artwork-02.jpg
+artwork-03.jpg
+artwork-04.jpg
+artwork-05.jpg
+artwork-06.jpg
+```
+
+You can simply replace those files with Seth's real images.
+
+The artwork gallery is driven from the `artworks` array in `src/App.vue`, so changing an image is as simple as changing:
+
+```ts
+image: '/images/artwork-01.jpg'
+```
+
+No artwork placeholder CSS is used anymore.
