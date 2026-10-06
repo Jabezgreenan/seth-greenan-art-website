@@ -1,59 +1,39 @@
-# Seth Greenan — Artist Portfolio
+# Seth Greenan site
 
-A dark, premium single-page artist portfolio built with Vue 3, TypeScript, Vite and plain CSS.
+A single-page site built with Vue 3, TypeScript, Vite and plain CSS.
+Pages: Home, Artwork, Pricing, About, Contact.
 
-## Run locally
+## Run it
 
 ```bash
 npm install
-npm run dev
+npm run dev      # local preview at http://localhost:5173
+npm run build    # production build in /dist
+npm run preview  # preview the production build
 ```
 
-Then open the local Vite URL shown in the terminal.
+Vite is the tool that runs and builds Vue projects, so you do need it.
 
-## Build for production
+## Change the content
 
-```bash
-npm run build
-npm run preview
-```
+Almost everything you will want to edit is in `src/data/site.ts`:
+artist details, artworks, the About text, prices, process, terms and FAQ.
+All text and prices there are placeholders.
 
-## Main sections
+### Use real artwork photos
+1. Put the images in `public/art/`.
+2. In `src/data/site.ts`, add `image: '/art/your-file.jpg'` to the artwork and set `ratio` to its width divided by height.
 
-- Home / hero
-- Featured artwork
-- About Seth
-- Pricing / commission guide
-- Contact
-- Instagram + email only
+Pieces without an `image` show a generated placeholder painting.
 
-## Add your images
+### Colours and fonts
+Colours and fonts are CSS variables at the top of `src/styles/main.css`.
 
-All site images live in:
+## The contact form
+There is no server, so the form opens the visitor's email app with the message filled in.
+To send messages without relying on the visitor's email app, point the form at a service such as Formspree or Netlify Forms and replace the `submit()` function in `src/views/ContactView.vue`.
 
-```text
-public/images/
-```
-
-Use these filenames:
-
-```text
-hero.jpg
-seth.jpg
-artwork-01.jpg
-artwork-02.jpg
-artwork-03.jpg
-artwork-04.jpg
-artwork-05.jpg
-artwork-06.jpg
-```
-
-You can simply replace those files with Seth's real images.
-
-The artwork gallery is driven from the `artworks` array in `src/App.vue`, so changing an image is as simple as changing:
-
-```ts
-image: '/images/artwork-01.jpg'
-```
-
-No artwork placeholder CSS is used anymore.
+## Hosting
+Run `npm run build` and upload the `dist` folder. Because this is a single-page app with clean URLs,
+the host must send every path to `index.html` (on Netlify add a `public/_redirects` file containing
+`/* /index.html 200`; on Vercel this works by default for Vite).
