@@ -9,8 +9,8 @@
 
 export const artist = {
   name: 'Seth Greenan',
-  email: 'hello@sethgreenan.art',
-  instagram: { handle: '@sethgreenan', url: 'https://instagram.com/' },
+  email: 'sethgreenan6@gmail.com',
+  instagram: { handle: '@_seth_art25_', url: 'https://www.instagram.com/_seth_art25_?stkn=MTE4cjQ0dGs1cDd5bg%3D%3D&utm_source=qr' },
   commissionsOpen: true,
 }
 
